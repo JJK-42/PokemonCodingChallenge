@@ -1,3 +1,4 @@
+# Holds information on attacks
 class Attack(object):
     def __init__(self, name, power, accuracy, element,
                  effects=[], short_info="", long_info=""):

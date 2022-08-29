@@ -1,5 +1,6 @@
 from .battle import Battle
 
+# Manages pokemon choice dialogue
 class BattleSetup(object):
     def __init__(self, view, controller):
         self.view = view

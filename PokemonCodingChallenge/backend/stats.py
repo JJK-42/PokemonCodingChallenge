@@ -1,3 +1,4 @@
+# Holds statistics of a pokemon
 class Stats(object):
     def __init__(self, health, attack, defense,
                  special_attack, special_defense, speed):

@@ -69,10 +69,7 @@ class Pokemon(object):
         return None
 
 
-    def use_attack(self, attack, target):
-        if attack not in self.attack_list:
-            return
-        
+    def compute_attack_power(self, attack):
         power = attack.power
 
         if attack.element in self.elements:
@@ -82,6 +79,15 @@ class Pokemon(object):
             power *= self.current_stats.attack
         else:
             power *= self.current_stats.special_attack
+
+        return power
+
+
+    def use_attack(self, attack, target):
+        if attack not in self.attack_list:
+            return
+        
+        power = self.compute_attack_power(attack)
 
         if attack.accuracy > random.randrange(0, 100):
             return target.take_hit(power, attack.element, attack.effects)

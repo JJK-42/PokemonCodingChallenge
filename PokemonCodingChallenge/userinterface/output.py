@@ -1,3 +1,4 @@
+# Handles output to the console
 class Output(object):
     def __init__(self):
         pass

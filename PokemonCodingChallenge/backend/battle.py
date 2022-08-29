@@ -1,5 +1,6 @@
 import random
 
+# Handles the actual battle between two pokemon
 class Battle(object):
     def __init__(self, player_pokemon, opponent_pokemon, view):
         self.player_pokemon = player_pokemon
@@ -39,6 +40,7 @@ class Battle(object):
         self.opponent_pokemon.trigger_statuses()
 
 
+    # Compute which attack the AI will use
     def compute_attack(self):
         return random.choice(self.opponent_pokemon.attack_list)
 
@@ -50,6 +52,7 @@ class Battle(object):
             print("You lose...")
 
 
+    # Main battle loop. Battles until one pokemon is dead
     def start_battle(self, view, controller):
         while (self.player_pokemon.is_alive() and
                self.opponent_pokemon.is_alive()):
